@@ -24,7 +24,7 @@ func createMsgTable() error {
     `
 	err := s.db.Exec(query)
 	return err
-	CloseDatabase()
+	defer CloseDatabase()
 }
 func CloseDatabase() error {
 	return db.Close()
